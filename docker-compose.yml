@@ -1,0 +1,55 @@
+services:
+  database:
+    image: pgvector/pgvector:pg16
+    ports:
+      - "127.0.0.1:5432:5432"
+    environment:
+      POSTGRES_DB: copilot
+      POSTGRES_USER: copilot
+      POSTGRES_PASSWORD: copilot-local-only
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U copilot -d copilot"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    volumes:
+      - copilot_postgres:/var/lib/postgresql/data
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      COPILOT_ENVIRONMENT: development
+      COPILOT_AUTH_MODE: development
+      COPILOT_DATABASE_URL: postgresql+asyncpg://copilot:copilot-local-only@database:5432/copilot
+      COPILOT_DATASET_PATH: data/support-cases.json
+      COPILOT_ZENDESK_CLI_PATH: /unavailable/zendesk-cli
+    depends_on:
+      database:
+        condition: service_healthy
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+
+  web:
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:8080:8080"
+    depends_on:
+      api:
+        condition: service_healthy
+    read_only: true
+    tmpfs:
+      - /var/cache/nginx
+      - /var/run
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+
+volumes:
+  copilot_postgres:

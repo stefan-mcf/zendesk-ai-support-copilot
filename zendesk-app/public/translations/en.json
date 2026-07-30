@@ -1,0 +1,13 @@
+{
+  "app": {
+    "name": "Support Copilot",
+    "short_description": "Grounded AI review and approved engineering handoff.",
+    "long_description": "Reviews ticket context, presents cited AI decisions, and gates Zendesk-to-Jira escalation behind an explicit agent approval.",
+    "parameters": {
+      "api_token": {
+        "label": "Copilot API token",
+        "helpText": "Secure token used only by the Zendesk request proxy."
+      }
+    }
+  }
+}

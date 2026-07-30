@@ -1,0 +1,16 @@
+.DS_Store
+.env
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+__pycache__/
+*.py[cod]
+output/
+frontend/node_modules/
+frontend/dist/
+zendesk-app/node_modules/
+zendesk-app/dist/
+deploy/aws/.terraform/
+deploy/aws/*.tfstate*
+

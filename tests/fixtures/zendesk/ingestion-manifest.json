@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "classification": "controlled_synthetic",
+  "subdomain": "example",
+  "ticket_id": "4",
+  "payload_sha256": "d9a6b3c6a31b62152349998e790ba9466b7ca4617b8a43628612f4239554fe7a",
+  "payload_file": "ticket-payload.json",
+  "receipt_file": "ticket-receipt.json",
+  "expected_tags": [
+    "support_copilot_test",
+    "controlled_synthetic",
+    "no_customer_data"
+  ],
+  "minimum_private_comments": 1
+}

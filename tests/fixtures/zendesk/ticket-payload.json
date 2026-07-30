@@ -1,0 +1,17 @@
+{
+  "ticket": {
+    "subject": "Support Copilot controlled case - password reset loop",
+    "comment": {
+      "body": "Synthetic support case. A user reset their password two minutes ago and still sees error E401. No customer identity or real customer data is included.",
+      "public": false
+    },
+    "priority": "normal",
+    "type": "question",
+    "status": "open",
+    "tags": [
+      "support_copilot_test",
+      "controlled_synthetic",
+      "no_customer_data"
+    ]
+  }
+}

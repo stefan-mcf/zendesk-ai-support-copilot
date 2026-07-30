@@ -1,0 +1,240 @@
+:root {
+  font-family:
+    Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #17201d;
+  background: #f7f9f8;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 280px;
+  margin: 0;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+.shell {
+  padding: 18px;
+}
+
+header {
+  padding-bottom: 17px;
+  border-bottom: 1px solid #dce5e1;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 5px;
+  font-size: 20px;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  margin: 4px 0 8px;
+  font-size: 16px;
+}
+
+header p,
+.ready p,
+.boundary,
+.no-draft {
+  color: #5a6963;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+header p {
+  margin-bottom: 0;
+}
+
+.eyebrow {
+  color: #0d6958;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.ready {
+  padding: 28px 4px 10px;
+  text-align: center;
+}
+
+.shield {
+  width: 38px;
+  height: 38px;
+  margin: 0 auto 12px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  color: #fff;
+  background: #0d6958;
+  font-weight: 800;
+}
+
+.primary,
+.secondary {
+  min-height: 36px;
+  padding: 8px 13px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.primary {
+  color: #fff;
+  background: #0d6958;
+}
+
+.primary:hover {
+  background: #094f42;
+}
+
+.secondary {
+  color: #0d6958;
+  border: 1px solid #adc4bb;
+  background: #fff;
+}
+
+.decision {
+  padding-top: 17px;
+}
+
+.decision-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.route {
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.route-draft {
+  color: #185b40;
+  background: #dff2e8;
+}
+
+.route-escalate {
+  color: #794d0f;
+  background: #fff0d1;
+}
+
+.route-block {
+  color: #7b2d27;
+  background: #fbe4e2;
+}
+
+.confidence {
+  color: #52615b;
+  font-family: ui-monospace, "SFMono-Regular", monospace;
+  font-size: 12px;
+}
+
+.draft,
+.evidence,
+.risks,
+.handoff {
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px solid #dce5e1;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.draft > strong,
+.evidence > strong,
+.risks > strong {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 12px;
+}
+
+.draft p,
+.evidence p,
+.risks p {
+  margin-bottom: 0;
+  color: #46544f;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.evidence article,
+.risks article {
+  padding: 10px 0;
+  border-top: 1px solid #e5ebe8;
+}
+
+.evidence article > span,
+.risks article > span {
+  color: #0d6958;
+  font-family: ui-monospace, "SFMono-Regular", monospace;
+  font-size: 9px;
+  text-transform: uppercase;
+}
+
+.evidence article > strong {
+  display: block;
+  margin: 3px 0 5px;
+  font-size: 11px;
+}
+
+.handoff {
+  border-color: #a8cabe;
+  background: #f1f8f5;
+}
+
+.handoff .primary,
+.link-button {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+
+.link-button {
+  text-decoration: none;
+}
+
+.boundary,
+.success,
+.error-copy {
+  margin: 10px 0 0;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.success {
+  color: #185b40;
+}
+
+.error-copy {
+  padding: 10px;
+  border: 1px solid #e7aaa5;
+  border-radius: 8px;
+  color: #7b2d27;
+  background: #fbe9e7;
+}
+
+.loading {
+  min-height: 120px;
+  display: grid;
+  place-items: center;
+  color: #5a6963;
+  font-size: 12px;
+}

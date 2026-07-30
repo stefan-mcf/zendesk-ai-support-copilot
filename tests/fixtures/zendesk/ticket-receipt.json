@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "state": "completed",
+  "command": "tickets create",
+  "subdomain": "example",
+  "target": "new",
+  "payload_sha256": "d9a6b3c6a31b62152349998e790ba9466b7ca4617b8a43628612f4239554fe7a",
+  "provider_id": "4",
+  "provider_status": 201,
+  "readback_passed": true,
+  "recorded_at": "2026-07-28T22:22:08Z"
+}
+

@@ -1,0 +1,14 @@
+.DS_Store
+.env
+.git
+.github
+.mypy_cache
+.pytest_cache
+.ruff_cache
+.terraform
+.venv
+deploy
+frontend/dist
+frontend/node_modules
+terraform.tfstate*
+evidence/screenshots

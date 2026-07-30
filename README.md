@@ -144,4 +144,3 @@ docs/            architecture, security and operating notes
 - [Architecture](docs/architecture.md)
 - [Security model](docs/security.md)
 - [Operations](docs/operations.md)
-

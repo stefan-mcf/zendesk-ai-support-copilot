@@ -40,4 +40,3 @@ The Terraform configuration defines:
 - Secrets Manager references for database and provider credentials;
 - CloudWatch logs, dashboard and alarms;
 - deployment circuit breaker and bounded target deregistration.
-

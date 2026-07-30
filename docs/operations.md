@@ -27,4 +27,3 @@ Application images should be pinned by immutable digest. ECS deployment circuit 
 ## Provider activation
 
 Zendesk and Jira handoffs remain disabled until tenant settings, secure tokens and an exact ticket allowlist are supplied. The default configuration cannot write to either provider.
-

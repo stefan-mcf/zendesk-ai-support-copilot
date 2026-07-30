@@ -30,4 +30,3 @@ Secrets are supplied at runtime. The repository contains placeholders only; tena
 ## Data boundary
 
 The included evaluation data is synthetic. Production use requires an approved knowledge collection, retention policy, access review and tenant-specific threat assessment.
-

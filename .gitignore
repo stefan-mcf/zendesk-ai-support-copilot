@@ -11,6 +11,7 @@ output/
 frontend/node_modules/
 frontend/dist/
 zendesk-app/node_modules/
+**/node_modules/
 zendesk-app/dist/
 deploy/aws/.terraform/
 deploy/aws/*.tfstate*

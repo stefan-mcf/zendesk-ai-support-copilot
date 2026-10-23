@@ -15,7 +15,7 @@
 | --- | --- |
 | FastAPI | Versioned routes, authentication, suggestions, evaluation and metrics |
 | PostgreSQL | Cases, suggestions, handoffs and append-only audit events |
-| pgvector | Knowledge embeddings and similarity search |
+| pgvector | Persistence of deterministic 128-dimensional token-feature vectors; runtime retrieval ranks in memory |
 | React console | Review queue, case inspection and release-gate evaluation |
 | Zendesk app | Ticket context, private analysis and approval action |
 | Jira callback | Verified issue key and final handoff transition |
@@ -25,6 +25,20 @@
 `DeterministicDraftProvider` makes local and CI evaluation reproducible. `BedrockDraftProvider` supplies the hosted inference path with request timeout and output-token limits.
 
 Provider selection does not change the policy layer. Retrieval, route gates, citations, audit and human-review requirements stay within the application.
+
+The Bedrock adapter implements hosted inference, including a configurable open-weight model ID. This is model integration, not training, fine-tuning or self-hosting.
+
+## Retrieval contract
+
+`HybridRetriever` chunks the approved articles and combines lexical overlap with cosine similarity over SHA256 token-feature hashes. The API constructs it from the fixture dataset. Search runs in memory; the presence of pgvector storage does not mean the inspected request path performs a database similarity query.
+
+The highest retrieval score is exposed as confidence for routing. It is a heuristic score, not a calibrated probability of correctness or a learned semantic embedding.
+
+## Evaluation contract
+
+The 40 synthetic cases form a fixed regression suite. Route accuracy compares expected routes, citation recall compares expected article IDs, and risk recall compares defined flags. Grounded-draft rate checks that citation markers identify retrieved documents; it does not assess every claim in the draft. Unsafe-draft rate checks whether a non-draft route has a draft. Sensitive-data leak rate uses the configured regex redaction rules, not a comprehensive privacy test.
+
+Historical passing percentages and hosted latency apply to the recorded dataset and provider run. Deterministic local/CI generation is separate from that run.
 
 ## Persistence
 

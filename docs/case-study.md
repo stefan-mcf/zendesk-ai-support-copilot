@@ -26,13 +26,16 @@ SM Systems owned:
 
 ## System design
 
-The service ingests an approved Zendesk ticket, retrieves from eight approved
-knowledge articles and asks AWS Bedrock for a bounded suggestion. Deterministic
-policy then chooses `draft`, `escalate` or `block`.
+The service ingests an approved Zendesk ticket and retrieves from eight approved
+knowledge articles using lexical overlap and deterministic token-feature hashes
+ranked in memory. The commissioned provider path used AWS Bedrock for a bounded
+suggestion; local/CI generation uses a deterministic provider. Policy then
+chooses `draft`, `escalate` or `block`.
 
 Drafts require citations and remain private. Sensitive content, prompt
 injection, incidents, unsupported restoration times, financial thresholds and
-low-confidence retrieval can force escalation or blocking. Every route records
+low-scoring retrieval can force escalation or blocking. The displayed confidence
+is a heuristic retrieval score, not a calibrated probability. Every route records
 `review_required=true`.
 
 An approved engineering escalation performs four controlled transitions:
@@ -72,6 +75,8 @@ The controlled case produced:
 The fixed 40-case evaluation recorded 28 draft, 9 escalation and 3 block cases.
 All defined route, citation, risk, grounding and review thresholds passed. The
 596 ms p95 figure and percentage results apply only to the fixed synthetic set.
+The [metric definitions](architecture.md#evaluation-contract) explain the narrow
+citation-marker, route/draft and regex-redaction invariants behind these results.
 
 ## Operational controls
 

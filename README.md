@@ -24,7 +24,7 @@ The system has no public-reply route. Provider writes require an exact ticket al
 
 ## Run locally
 
-Requirements: Python 3.12, [uv](https://docs.astral.sh/uv/), Node.js and npm.
+Requirements: Python 3.12, [uv](https://docs.astral.sh/uv/), Node.js 24 LTS and npm. The frontend's supported Node versions are declared in [package.json](frontend/package.json); Node 20 is not supported by its current test toolchain.
 
 ```bash
 uv sync --frozen --python 3.12

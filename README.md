@@ -8,9 +8,11 @@ A support workflow that retrieves approved knowledge, produces cited private sug
 
 [Architecture](docs/architecture.md) · [Case study and results](docs/case-study.md) · [Operations](docs/operations.md)
 
-![Commissioning summary combining native Zendesk and copilot views](assets/human-reviewed-support-console.png)
+## A ticket asks for a restoration time
 
-*Controlled synthetic commissioning case, August 2026. The image combines native interface captures; it does not indicate a currently hosted service.*
+In [synthetic case S3](data/support-cases.json), a team reports HTTP 503 errors and asks exactly when service will return. The deterministic local evaluation returns `escalate`, flags the incident and unsupported restoration estimate, and routes the case to human review without a draft.
+
+After [local setup](#run-locally), run `make evaluate` and find `S3` in `output/golden-evaluation-report.json`. This example exercises the routing policy on a fixed fixture. The [August 2026 commissioning capture](assets/human-reviewed-support-console.png) documents a separate controlled Zendesk and Jira run.
 
 ## How it works
 
